@@ -34,10 +34,10 @@ class TestModels(TestCase):
             writer=self.admin,
             title="Test Article 1",
             content="Lorem ipsum dolor sit amet, consectetuer adipiscing \
-                      elit. Aenean commodo ligula eget dolor. Aenean massa. \
-                      Cum sociis natoque penatibus et magnis dis parturient \
-                      montes, nascetur ridiculus mus. Donec quam felis, \
-                      ultricies nec, pellentesque eu, pretium quis, sem. ",
+                    elit. Aenean commodo ligula eget dolor. Aenean massa. \
+                    Cum sociis natoque penatibus et magnis dis parturient \
+                    montes, nascetur ridiculus mus. Donec quam felis, \
+                    ultricies nec, pellentesque eu, pretium quis, sem. ",
             category=self.first_category,
             image="http://testimage.com"
         )
@@ -73,10 +73,10 @@ class TestModels(TestCase):
             writer=self.admin,
             title="Test Article 2",
             content="Lorem ipsum dolor sit amet, consectetuer adipiscing \
-                      elit. Aenean commodo ligula eget dolor. Aenean massa. \
-                      Cum sociis natoque penatibus et magnis dis parturient \
-                      montes, nascetur ridiculus mus. Donec quam felis, \
-                      ultricies nec, pellentesque eu, pretium quis, sem. ",
+                    elit. Aenean commodo ligula eget dolor. Aenean massa. \
+                    Cum sociis natoque penatibus et magnis dis parturient \
+                    montes, nascetur ridiculus mus. Donec quam felis, \
+                    ultricies nec, pellentesque eu, pretium quis, sem. ",
             category=self.first_category,
             image="http://testimage.com"
         )
