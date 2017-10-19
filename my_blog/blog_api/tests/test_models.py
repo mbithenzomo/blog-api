@@ -15,8 +15,8 @@ class TestModels(TestCase):
 
     def setUp(self):
         """
-        Create a category and an article
-        before each test is run
+        Create an admin user, a category and
+        an article before each test is run
         """
 
         self.admin = User(
