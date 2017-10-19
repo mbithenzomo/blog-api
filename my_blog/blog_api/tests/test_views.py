@@ -22,6 +22,7 @@ class TestViews(APITestCase):
         """
 
         self.admin = User(
+            username="testadmin",
             email="blog_admin@test.com",
             password="testpassword"
         )

@@ -20,6 +20,7 @@ class TestModels(TestCase):
         """
 
         self.admin = User(
+            username="testadmin",
             email="blog_admin@test.com",
             password="testpassword"
         )
