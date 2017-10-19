@@ -1,4 +1,4 @@
-from django.contrib.auth import authenticate
+from django.contrib.auth import authenticate, login
 
 from rest_framework import viewsets, status
 from rest_framework.response import Response
@@ -13,15 +13,15 @@ class LoginView(APIView):
     Allow admin user to login
     """
 
-    def post(self, request, format=None):
+    def post(self, request):
         serializer = UserSerializer(data=request.data)
         if serializer.is_valid():
-            serializer.save()
             user = authenticate(username=request.data["username"],
                                 password=request.data["password"])
             if user is not None:
-                return Response(serializer.data,
-                                status=status.HTTP_200_CREATED)
+                login(request, user)
+                return Response({"message": "successfully logged in!"},
+                                status=status.HTTP_200_OK)
             else:
                 return Response({"error": "Invalid username or password."},
                                 status=status.HTTP_400_BAD_REQUEST)
