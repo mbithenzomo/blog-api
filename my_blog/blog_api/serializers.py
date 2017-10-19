@@ -5,7 +5,7 @@ from rest_framework import serializers
 from .models import Article, Category
 
 
-class CategorySerializer(serializers.ModelSerializeqr):
+class CategorySerializer(serializers.ModelSerializer):
 
     class Meta:
         model = Category
