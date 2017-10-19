@@ -3,6 +3,7 @@ from django.contrib.auth import authenticate, login
 from rest_framework import viewsets, status
 from rest_framework.response import Response
 from rest_framework.views import APIView
+from rest_framework.permissions import IsAuthenticatedOrReadOnly
 
 from .models import Category, Article
 from .serializers import CategorySerializer, ArticleSerializer, UserSerializer
@@ -34,6 +35,7 @@ class CategoryViewSet(viewsets.ModelViewSet):
     Request methods (api/v1/categories): POST, GET
     Request methods (api/v1/categories/<id>): GET, PUT, DELETE
     """
+    permission_classes = (IsAuthenticatedOrReadOnly,)
 
     queryset = Category.objects.all()
     serializer_class = CategorySerializer
@@ -45,6 +47,7 @@ class ArticleViewSet(viewsets.ModelViewSet):
     Request methods (api/v1/articles): POST, GET
     Request methods (api/v1/articles/<id>): GET, PUT, DELETE
     """
+    permission_classes = (IsAuthenticatedOrReadOnly,)
 
     queryset = Article.objects.all()
     serializer_class = ArticleSerializer
