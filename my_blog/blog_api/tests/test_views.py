@@ -35,7 +35,7 @@ class TestViews(APITestCase):
                                                   format="json")
 
         self.article_data = {
-            "writer": self.admin,
+            "writer": self.admin.id,
             "title": "Test Article 1",
             "content": "Lorem ipsum dolor sit amet, consectetuer adipiscing \
                     elit. Aenean commodo ligula eget dolor. Aenean massa. \
@@ -46,7 +46,7 @@ class TestViews(APITestCase):
             "image": "http://testimage.com"
         }
         self.response_article = self.client.post("/api/v1/articles/",
-                                                 self.artcile_data,
+                                                 self.article_data,
                                                  format="json")
 
     def test_create_category_using_api(self):
@@ -67,7 +67,7 @@ class TestViews(APITestCase):
     def test_create_article_using_api(self):
 
         new_article_data = {
-            "writer": self.admin,
+            "writer": self.admin.id,
             "title": "Test Article 2",
             "content": "Lorem ipsum dolor sit amet, consectetuer adipiscing \
                     elit. Aenean commodo ligula eget dolor. Aenean massa. \
